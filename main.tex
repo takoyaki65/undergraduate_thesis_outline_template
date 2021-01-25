@@ -1,0 +1,81 @@
+\documentclass[9pt,a4paper,twocolumn]{jsarticle}
+
+%%%%%%%%% 利用パッケージ一覧 %%%%%%%%%%%
+
+% 原稿の余白を調整するためのパッケージ
+\usepackage[truedimen, top=20truemm, bottom=20truemm, left=20truemm, right=20truemm]{geometry} 
+
+% 原稿のレイアウトを確認するためのパッケージ
+\usepackage{layout}
+
+% フォントの設定用のパッケージ
+\usepackage[T1]{fontenc}       %Latin Modern
+\usepackage{lmodern}           %Latin Modern
+
+% 数式用のパッケージ
+\usepackage{amsmath,amssymb}
+\usepackage{bm}               % 太文字ベクトル用
+
+% 図の描画用のパッケージ
+\usepackage[dvipdfmx]{graphicx}
+
+% 図のキャプションの設定用のパッケージ
+\usepackage[labelsep=space, figurename=Fig.\;, tablename=Table\;]{caption}
+\usepackage[labelformat=parens,subrefformat=parens]{subcaption}
+
+% 複数行にわたるコメントアウトのためのパッケージ
+\usepackage{comment}
+
+% URLを扱うためのパッケージ
+\usepackage{url}
+
+%%%%%%%% レイアウト設定 %%%%%%%%%%%
+\pagestyle{empty}
+\abovecaptionskip=4truept   
+\belowcaptionskip=-3truept
+\setlength{\columnsep}{2zw} % 2段組の間の間隔
+
+% 参考文献のスタイルの設定
+\makeatletter
+\renewcommand{\@biblabel}[1]{(#1)\hspace{6truept}}
+\makeatother
+
+% 参考文献リストの参照のスタイルの設定
+\makeatletter
+\def\@cite#1{\hspace{1truept}$^{\scalebox{0.65}{#1)}}$}
+\makeatother
+
+% 章のスタイルの設定
+\renewcommand{\thesection}{\arabic{section}．\hspace{-15truept}}
+
+% urlのフォントの設定
+\renewcommand\UrlFont{\rmfamily}
+
+%%%%%%%%%%%%%%%%%%ドキュメント開始%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%% タイトル %%%%%%%%%%%%%
+\twocolumn[
+\vspace{13pt}
+\centerline{\LARGE \textsf{［A00］}%
+\textgt{卒業研究題目を入れる}}
+\vspace{2.0\baselineskip}
+\rightline{I\hspace{-1pt}I\hspace{-1pt}I類ほげほげ%
+プログラム　ほにゃらら研究室}
+
+\rightline{1700000 UEC 太郎}
+\vspace{2.0\baselineskip}
+]
+%%%%%%%%%%%%% 本文開始 %%%%%%%%%%%%%%%%
+
+\section{序論}
+
+\section{結論}
+
+\bibliographystyle{junsrt}
+\begin{thebibliography}{9}
+\bibitem{cite:label}
+T. Yoshikawa: Manipulability of Robotic Mechanisms, The International Journal of Robotics Research, Vol. 4, pp. 3-9,
+(1985).
+\end{thebibliography}
+\end{document}
